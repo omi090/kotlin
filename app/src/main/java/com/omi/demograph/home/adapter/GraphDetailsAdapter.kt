@@ -33,9 +33,6 @@ class GraphDetailsAdapter(
         holder.storeBinding.executePendingBindings()
     }
 
-
-
-
     class GraphStoreListViewHolder(val storeBinding: ListItemStoreBinding) :
         RecyclerView.ViewHolder(storeBinding.root)
 }

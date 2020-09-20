@@ -1,6 +1,6 @@
 package com.omi.demograph.home.repository
 
-import com.empoweredtls.constants.APPURL
+import com.omi.demograph.constants.APPURL
 import com.omi.demograph.home.data.GraphResponse
 import retrofit2.Call
 import retrofit2.http.GET

@@ -1,7 +1,6 @@
 package com.omi.demograph.home.viewModel
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.omi.demograph.home.data.GraphResponse
 import com.omi.demograph.home.repository.GraphRepository

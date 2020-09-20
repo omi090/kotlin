@@ -1,7 +1,6 @@
 package com.omi.demograph.home.network
 
-import com.empoweredtls.constants.APPURL
-import com.omi.demograph.home.repository.GraphService
+import com.omi.demograph.constants.APPURL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

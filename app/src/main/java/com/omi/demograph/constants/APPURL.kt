@@ -1,4 +1,4 @@
-package com.empoweredtls.constants
+package com.omi.demograph.constants
 
 object APPURL {
 
