@@ -38,7 +38,7 @@ class ChartActivity : AppCompatActivity() {
     }
 
     private fun setBarChart(monthWiseData: MonthWise) {
-        
+
         val barDataSet = BarDataSet(getDataSet(monthWiseData), "BarChart")
 
 //        val chartData = BarData(getXAxisValues(), barDataSet)
