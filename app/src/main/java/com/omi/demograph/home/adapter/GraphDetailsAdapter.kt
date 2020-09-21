@@ -7,11 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.omi.demograph.R
 import com.omi.demograph.databinding.ListItemStoreBinding
+import com.omi.demograph.home.GraphDetailsListener
 import com.omi.demograph.home.data.App
 
 class GraphDetailsAdapter(
     private val graphStoreList: List<App>,
-    private val context: Context
+    private val context: Context,
+    private val graphDetailsListener: GraphDetailsListener
 ) : RecyclerView.Adapter<GraphDetailsAdapter.GraphStoreListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GraphStoreListViewHolder {
@@ -30,6 +32,7 @@ class GraphDetailsAdapter(
     override fun onBindViewHolder(holder: GraphStoreListViewHolder, position: Int) {
         val storeList: App = graphStoreList.get(position)
         holder.storeBinding.graphDetails = storeList
+        holder.storeBinding.graphDetailsListener = graphDetailsListener
         holder.storeBinding.executePendingBindings()
     }
 

@@ -24,7 +24,7 @@ class GraphRepository {
         val graphDetailsCall = graphService.getGraphDataDetails()
         graphDetailsCall.enqueue(object : Callback<GraphResponse> {
             override fun onFailure(call: Call<GraphResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.i("TAG", "OnFailure")
 
             }
 

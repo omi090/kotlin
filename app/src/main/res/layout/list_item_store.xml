@@ -9,6 +9,10 @@
         <variable
             name="graphDetails"
             type="com.omi.demograph.home.data.App" />
+
+        <variable
+            name="graphDetailsListener"
+            type="com.omi.demograph.home.GraphDetailsListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,25 +20,33 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title_store_name"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Store Name" />
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:onClick="@{() -> graphDetailsListener.onStoreNameClickListener(graphDetails)}"
+            tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/store_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@{graphDetails.name}"
-            app:layout_constraintStart_toEndOf="@+id/title_store_name"
-            app:layout_constraintBottom_toBottomOf="@+id/title_store_name"
-            tools:text="Name" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Store Name" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{graphDetails.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/title_store_name"
+                app:layout_constraintStart_toEndOf="@+id/title_store_name"
+                tools:text="Name" />
 
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

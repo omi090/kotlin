@@ -1,5 +1,6 @@
 package com.omi.demograph.home.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -8,11 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.omi.demograph.R
 import com.omi.demograph.databinding.ActivityMainBinding
+import com.omi.demograph.home.GraphDetailsListener
 import com.omi.demograph.home.adapter.GraphDetailsAdapter
 import com.omi.demograph.home.data.App
 import com.omi.demograph.home.viewModel.GraphViewModel
 
-class LauncherActivity : AppCompatActivity() {
+class LauncherActivity : AppCompatActivity(), GraphDetailsListener {
 
     private var storeList = mutableListOf<App>()
     private lateinit var graphViewModel: GraphViewModel
@@ -42,7 +44,7 @@ class LauncherActivity : AppCompatActivity() {
     }
 
     private fun initAdapter() {
-        graphDetailsAdapter = GraphDetailsAdapter(storeList, this)
+        graphDetailsAdapter = GraphDetailsAdapter(storeList, this, this)
     }
 
     private fun initLayoutManager() {
@@ -66,4 +68,13 @@ class LauncherActivity : AppCompatActivity() {
     private fun getGraphDetails() {
         graphViewModel.getGraphDetails()
     }
+
+    override fun onStoreNameClickListener(graphDetails: App) {
+        val intent = Intent(this, ChartActivity::class.java)
+        intent.putExtra("GRAPH_DETAILS", graphDetails)
+        startActivity(intent)
+    }
+
+
 }
+
